@@ -50,7 +50,3 @@ predicted_answers = line(m,feature,c)
 plt.scatter(feature,target_var)
 plt.scatter(feature,predicted_answers)
 plt.show()
-
-
-    
-    
