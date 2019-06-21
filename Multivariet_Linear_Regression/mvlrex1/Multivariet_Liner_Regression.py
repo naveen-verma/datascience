@@ -36,8 +36,8 @@ def accuracy_pred(error, y):
 m = np.random.randn(1,8)
 c = random.random()
 
-iterations = 1000
-lr = 0.0001
+iterations = len(features)
+lr = 0.0000000001
 error_array = []
 for i in range(0, iterations):
     m = m-lr*derivative_slopes(m,features,c,target_var)
