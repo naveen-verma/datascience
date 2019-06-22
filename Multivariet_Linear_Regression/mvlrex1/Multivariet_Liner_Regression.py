@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import random as random
+from IPython.display import clear_output
 
 data = pd.read_csv("../../files/housing.csv")
 # data.columns
@@ -35,14 +36,16 @@ def accuracy_pred(error, y):
 #print(derivative_intercept(m,features,c,target_var))
 m = np.random.randn(1,8)
 c = random.random()
-
+#print(len(features))
 iterations = len(features)
-lr = 0.0000000001
+lr = 0.000000000000001
 error_array = []
 for i in range(0, iterations):
     m = m-lr*derivative_slopes(m,features,c,target_var)
     c = c-lr*derivative_intercept(m,features,c,target_var)
     error_array.append(error(m,features,c,target_var))
+    print(accuracy_pred(error(m,features,c,target_var),target_var))
+    clear_output()
 
 plt.plot(error_array)
 plt.show();
